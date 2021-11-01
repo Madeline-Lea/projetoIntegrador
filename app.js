@@ -29,7 +29,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
-}))
+}));
 
 //port listen server
 app.listen(3000, () => {
