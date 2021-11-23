@@ -1,38 +1,63 @@
-//express callback methods for use and route imports
+// começo do app
+
+// chamando os módulos
 const express = require("express");
 const app = express();
 const methodOverride = require("method-override");
-const CadastroRouter = require("./routes/CadastroRouter")
 const session = require("express-session")
-//end of express callback methods and route imports (but working) #trully needs to be working
 
-//ejs engine setup, public static files settings & json files express extension
+//usando os módulos
 app.set("view engine", "ejs"); 
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('method'))
-//end of ejs engine setup, public static files settings & json files express extension
 
-//routes config
-app.use(CadastroRouter);;
-//end of routes config 
-
-//render config for main    
-app.get("/", (req, res) => {
-    return res.render("index.ejs");
-});
-//end of render config for main
-
+//usando express-section
 app.use(session({
-  secret: 'just a secret hahaha!',
+  secret: 'Apenas um segredo!',
   resave: false,
   saveUninitialized: true,
   cookie: { secure: true }
 }));
 
-//port listen server
-app.listen(3000, () => {
-    console.log("Initializing... " + "Verifiying Errors... " + "No errors encountered! " + "Server initializing... "  + "Listening on 3000 ")
+
+//configurando as rotas
+const perfilRouter = require("./routes/perfilRouter");
+const cadastroRouter = require("./routes/cadastroRouter");
+const linguagensRouter = require("./routes/linguagensRouter");
+const administracaoRouter = require("./routes/administracaoRouter");
+const erroRouter = require("./routes/erroRouter");
+const postagensRouter = require("./routes/postagensRouter");
+
+// chamada das rotas
+app.use("/cadastro", cadastroRouter);
+app.use("/perfil", perfilRouter);
+app.use("/linguagens", linguagensRouter);
+app.use("/erro", erroRouter);
+app.use("/administracao", administracaoRouter);
+app.use("/post", postagensRouter);
+
+//página principal    
+app.get("/", (req, res) => {
+    return res.render("index.ejs")
 });
-//end of port listen server
+
+//sequilze 
+const sequelize = require("./config/database")
+
+
+sequelize
+.authenticate()
+.then(() =>{
+    console.log("Conexão com banco rodando...")
+})
+.catch(err => {
+    console.error("Error: ", err)
+});
+
+//Porta que o servidor está rodando
+app.listen(3000, () => {
+    console.log("Servidor Rodando!")
+
+});

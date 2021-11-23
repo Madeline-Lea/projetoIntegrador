@@ -7,7 +7,7 @@
     <title>Registro</title>
 </head>
 <body>
-
+    <%- include("../partials/header") %> 
 
     <main>
 
@@ -23,7 +23,7 @@
             <br />
 
            <form>
-                <form action="/cadastro" method="POST">
+                <form action="/cadastro/salvo" method="POST">
                         <label for="nome:">Nome:</label>
                         <input type="text" placeholder="Nome" name="nome">
                         <label for="sobrenome:">Sobrenome:</label>
@@ -45,12 +45,9 @@
                         <input type="password"  name="confirmPassword">
                         <br /> 
                         <button type="submit">Enviar</button>
-                </form>
-           </form>  
+                </form>  
         </main>
     </section>
-    <footer>
-
-    </footer>
-<</body>
+    <%- include("../partials/footer") %> 
+</body>
 </html>

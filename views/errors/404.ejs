@@ -7,21 +7,24 @@
     <title>404 Not Found</title>
 </head>
 <body>
-    <main>
-    <header>
-        <nav>
-            
-        </nav>
 
-    </header>
+    <%- include("./partials/header") %> 
+
+    <main>
 
     <section>
         <h1>404 Não Encontrado!</h1>
-            <p>
-                Um erro foi encontrado e a página de destino não foi encontrada, <br /> 
-                clique em home para voltar a homepage.
-            </p>
-            <button>Home</button>
+        <p>
+            Um erro foi encontrado e a página de destino não foi encontrada, <br /> 
+            clique em home para voltar a homepage.
+        </p>
+    
+        <button>Home</button>
+    
     </section>
-<</body>
+    </main>   
+
+    <%- include("./partials/footer")  %> 
+
+    </body>
 </html>
