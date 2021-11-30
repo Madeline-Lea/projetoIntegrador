@@ -5,6 +5,8 @@ const express = require("express");
 const app = express();
 const methodOverride = require("method-override");
 const session = require("express-session")
+//const uuid = require("uuid")
+
 
 //usando os módulos
 app.set("view engine", "ejs"); 
@@ -12,6 +14,8 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('method'))
+//app.use(uuid())
+//app.use()
 
 //usando express-section
 app.use(session({
@@ -47,17 +51,16 @@ app.get("/", (req, res) => {
 const sequelize = require("./config/database")
 
 
-sequelize
-.authenticate()
-.then(() =>{
-    console.log("Conexão com banco rodando...")
-})
-.catch(err => {
-    console.error("Error: ", err)
-});
+// sequelize
+// .authenticate()
+// .then(() =>{
+//     console.log("Conexão com banco rodando...")
+// })
+// .catch(err => {
+//     console.error("Error: ", err)
+// });
 
 //Porta que o servidor está rodando
 app.listen(3000, () => {
     console.log("Servidor Rodando!")
-
 });

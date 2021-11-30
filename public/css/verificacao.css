@@ -1,0 +1,14 @@
+.verify1 {
+    width: 804px;
+    height: 639px;
+    border: solid 3px red;
+    display: inline-block;
+}
+
+.verify2 {
+    width: 200px;
+    height: 200px;
+    border: solid 3px red;
+    display: inline-block;
+    z-index: 1;
+}
