@@ -1,7 +1,8 @@
 const express  = require("express");
-const router = express.Router()
+const cadastroRouter = express.Router()
 
 
-router.get("/", (req, res) => res.render("../views/cadastro/verificacao"))
+cadastroRouter.get("/", (req, res) => res.render("../views/cadastro/verificacao"))
+cadastroRouter.get("/registro", (req, res) => res.render("../views/cadastro/cadastro"))
 
-module.exports = router
+module.exports = cadastroRouter

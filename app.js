@@ -33,6 +33,8 @@ const linguagensRouter = require("./routes/linguagensRouter");
 const administracaoRouter = require("./routes/administracaoRouter");
 const erroRouter = require("./routes/erroRouter");
 const postagensRouter = require("./routes/postagensRouter");
+const sobreNosRouter = require("./routes/sobreNosRouter");
+
 
 // chamada das rotas
 app.use("/cadastro", cadastroRouter);
@@ -41,14 +43,15 @@ app.use("/linguagens", linguagensRouter);
 app.use("/erro", erroRouter);
 app.use("/administracao", administracaoRouter);
 app.use("/post", postagensRouter);
+app.use("/sobre", sobreNosRouter);
 
 //página principal    
 app.get("/", (req, res) => {
     return res.render("index.ejs")
 });
 
-//sequilze 
-const sequelize = require("./config/database")
+// //sequilze 
+// const sequelize = require("./config/database");
 
 
 // sequelize
