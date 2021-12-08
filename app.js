@@ -51,17 +51,17 @@ app.get("/", (req, res) => {
 });
 
 // //sequilze 
-// const sequelize = require("./config/database");
+const sequelize = require("./config/database");
 
 
-// sequelize
-// .authenticate()
-// .then(() =>{
-//     console.log("Conexão com banco rodando...")
-// })
-// .catch(err => {
-//     console.error("Error: ", err)
-// });
+sequelize
+.authenticate()
+.then(() =>{
+    console.log("Conexão com banco rodando...")
+})
+.catch(err => {
+    console.error("Error: ", err)
+});
 
 //Porta que o servidor está rodando
 app.listen(3000, () => {
