@@ -6,38 +6,33 @@ const Usuario = database.define('Usuario', {
         type: Sequelize.INTEGER,    
         allowNull: false,
         autoIncrement: true,
-        primaryKey: true
+        primaryKey: true 
     },
-    nome: {
+  nome: {
+      type: Sequelize.STRING,
+      allowNull: false,
+  },
+  email: {
+      type: Sequelize.STRING,
+      allowNull: false
+  },
+  senha: {
         type: Sequelize.STRING,
         allowNull: false
-    },
-    sobrenome: {
-        typeOf: Sequelize.STRING,
+},
+    data: {
+        type: Sequelize.INTEGER,
         allowNull: false
     },
-    nome_usuario: { 
-    typeOf: Sequelize.STRING,
-    allowNull: false
-    },
-    data_nascimento: 
-    {
-    typeof: Sequelize.INTEGER,
-    allowNull: false
-    },
-        genero: {
-        typeOf: Sequelize.ENUM("M", "F", "U"),
-        allowNull: false
-        },
-    email: {
-        typeOf: Sequelize.STRING,
+    genero:{
+        type: Sequelize.ENUM("M", "F", "I"),
         allowNull: false
     },
-    senha: {
-    typeOf: Sequelize.STRING,
-    allowNull: false
-    }
-    }, {
+    nome_usuario:{
+        type: Sequelize.STRING,
+        allowNull: false
+    }.allowNull,
+
     timestamps: true,
     tableName: 'usuarios'
 });
