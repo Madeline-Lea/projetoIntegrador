@@ -17,14 +17,6 @@ const Resposta = database.define("Resposta", {
         type: Sequelize.INTEGER,
         allownull: false, 
         foreignKey: true 
-    }, 
-    conteudo: {
-        type: Sequelize.STRING,
-        allownull: true,
-    },
-    data_resposta:{
-        type: Sequelize.INTEGER,
-        allownull: false 
     },
     
         timestamps: false,
