@@ -30,12 +30,23 @@
         mostrarUsuario: (req, res) => {
            const id =  req.params.id;
 
-           const usuarios = await usuarios.findOne({where: { id }});  
+           const usuarios = await usuarios.findOne({where: { id }}); 
+           
+           if(usuarios == null){
+               return res.status(404).json({mensagem: "Usuário não encontrado, verifique suas credênciais e tente novamente."})
+           }
         },
 
-        deletar: () => {
+        deletar: async()  => {
+            const id =  req.params.id;
+
+            const usuarios = await usuarios.destroy({where: { id }}); 
             
+            if(usuarios == null){
+                return res.status(204).send()
+            }
         }
 
     }
+
     module.exports = usuarioController
