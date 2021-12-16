@@ -1,6 +1,8 @@
 const Sequelize = require('sequelize');
 const database = require('../config/database')
 
+id, nome, email, senha, data, genero, nome_usuario
+
 const Usuario = database.define('Usuario', {
     id: {
         type: Sequelize.INTEGER,    
