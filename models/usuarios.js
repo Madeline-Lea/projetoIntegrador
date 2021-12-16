@@ -31,7 +31,7 @@ const Usuario = database.define('Usuario', {
     nome_usuario:{
         type: Sequelize.STRING,
         allowNull: false
-    }.allowNull,
+    },
 
     timestamps: true,
     tableName: 'usuarios'
