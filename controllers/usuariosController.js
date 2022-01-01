@@ -1,4 +1,4 @@
-    const { Usuario } = require("../models");
+    const { Usuario } = require("../models/usuarios");
 
 
     const usuarioController = {
@@ -23,7 +23,7 @@
 
             if(usuarios == null){
 
-                return res.status(404).json({mensagem: "Usuario não encontrado, verifique suas credenciais e tente novamente."})
+                return res.status(404).json({mensagem: "Usuario não encontrado, verifique suas credenciais e tente novamente."});
             }
 
         },
@@ -43,10 +43,10 @@
             const usuarios = await usuarios.destroy({where: { id }}); 
             
             if(usuarios == null){
-                return res.status(204).send()
+                return res.status(204).send();
             }
         }
 
-    }
+    };
 
     module.exports = usuarioController

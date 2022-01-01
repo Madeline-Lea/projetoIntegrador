@@ -477,6 +477,12 @@ USE `pi`;
 -- --------------------------------------------------------
 
 --
+--Criar banco de dados
+--
+
+CREATE DATABASE pI
+
+--
 -- Estrutura da tabela `perguntas`
 --
 
