@@ -16,10 +16,6 @@ const perguntasController = {
         res.status(201).json(perguntas)
     },
 
-    solucaoPergunta: async (req, res) => {
-        const solucao = req.body.solucao
-        
-    }
 
 }
 module.exports = perguntasController

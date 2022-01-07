@@ -17,7 +17,8 @@ app.use(methodOverride('method'))
 //app.use(uuid())
 //app.use()
 
-//usando express-section
+//usando express-session
+   // Esse é o session, utilizado para fazer e iniciar uma sessão ao nosso usuário.
 app.use(session({
   secret: 'Apenas um segredo!',
   resave: false,
@@ -27,6 +28,7 @@ app.use(session({
 
 
 //configurando as rotas
+   // Aqui que fica às famosas rotas, logo iremos testar elas com os metódos dos controllers
 const perfilRouter = require("./routes/perfilRouter");
 const cadastroRouter = require("./routes/cadastroRouter");
 const linguagensRouter = require("./routes/linguagensRouter");
@@ -37,6 +39,7 @@ const sobreNosRouter = require("./routes/sobreNosRouter");
 
 
 // chamada das rotas
+   // Aqui é a declaração da nossa url, para que possamos apenas utilizar o método do nosso controller e comprimento com o id e params.
 app.use("/cadastro", cadastroRouter);
 app.use("/perfil", perfilRouter);
 app.use("/linguagens", linguagensRouter);
@@ -46,11 +49,13 @@ app.use("/post", postagensRouter);
 app.use("/sobre", sobreNosRouter);
 
 //página principal    
+  // Aquela página de Hello world não pode faltar, né?
 app.get("/", (req, res) => {
     return res.render("index.ejs")
 });
 
 // //sequilze 
+// Aqui fica o nosso causador de sequelas mesmo, sequelize ou banco de dados versão premium do javascript.
 const sequelize = require("./config/database");
 
 
@@ -64,6 +69,7 @@ sequelize
 });
 
 //Porta que o servidor está rodando
+  // Aonde nosso site está escutando.
 app.listen(3000, () => {
     console.log("Servidor Rodando!")
 });

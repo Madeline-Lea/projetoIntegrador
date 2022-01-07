@@ -1,7 +1,6 @@
-const Sequelize = require('sequelize');
-const database = require('../config/database')
 
-id, nome, email, senha, data, genero, nome_usuario
+const database = require('../config/database');
+
 
 const Usuario = database.define('Usuario', {
     id: {
@@ -22,12 +21,12 @@ const Usuario = database.define('Usuario', {
         type: Sequelize.STRING,
         allowNull: false
 },
-    data: {
+    data_nascimento: {
         type: Sequelize.INTEGER,
         allowNull: false
     },
     genero:{
-        type: Sequelize.ENUM("M", "F", "I"),
+        type: Sequelize.ENUM("Masculino", "Feminino", "Indefinido"),
         allowNull: false
     },
     nome_usuario:{
@@ -39,4 +38,6 @@ const Usuario = database.define('Usuario', {
     tableName: 'usuarios'
 });
 
-module.exports = Usuario;
+
+
+module.exports = Usuario
