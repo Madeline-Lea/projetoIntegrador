@@ -14,24 +14,15 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('method'))
-//app.use(uuid())
-//app.use()
 
-//usando express-session
-   // Esse é o session, utilizado para fazer e iniciar uma sessão ao nosso usuário.
-app.use(session({
-  secret: 'Apenas um segredo!',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
-
+//Configuração
+  //configurando os Controllers
 
 //configurando as rotas
    // Aqui que fica às famosas rotas, logo iremos testar elas com os metódos dos controllers
 const perfilRouter = require("./routes/perfilRouter");
 const cadastroRouter = require("./routes/cadastroRouter");
-const linguagensRouter = require("./routes/linguagensRouter");
+const loginRouter = require("./routes/loginRouter");
 const administracaoRouter = require("./routes/administracaoRouter");
 const erroRouter = require("./routes/erroRouter");
 const postagensRouter = require("./routes/postagensRouter");
@@ -42,7 +33,7 @@ const sobreNosRouter = require("./routes/sobreNosRouter");
    // Aqui é a declaração da nossa url, para que possamos apenas utilizar o método do nosso controller e comprimento com o id e params.
 app.use("/cadastro", cadastroRouter);
 app.use("/perfil", perfilRouter);
-app.use("/linguagens", linguagensRouter);
+app.use("/login", loginRouter);
 app.use("/erro", erroRouter);
 app.use("/administracao", administracaoRouter);
 app.use("/post", postagensRouter);

@@ -7,7 +7,7 @@
         
             return res.json(usuarios);
         },
-        criar: async(req, res) =>{
+        criar: async (req, res) =>{
             const { id, nome, email, senha, data, genero, nome_usuario } = req.body;
             
             const usuarios = await usuarios.create({id, nome, email, senha, data, genero, nome_usuario});
