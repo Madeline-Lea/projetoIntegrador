@@ -34,7 +34,7 @@
 
                     } else {
 
-                        res.render("../loginControllerTeste")
+                        return res.render("../loginControllerTeste");
                     };
                 
                 },
@@ -45,10 +45,10 @@
                          
                         req.session.login = login;
 
-                         res.render("../logado")
+                        return res.render("../logado")
 
                     } else {
-                        res.render("../loginControllerTeste")
+                      return res.render("../loginControllerTeste")
                     }
 
                 }

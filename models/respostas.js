@@ -1,7 +1,8 @@
 const Sequelize = require('sequelize');
 const database = require('../config/database')
 
-const Resposta = database.define("Resposta", {
+
+const Respostas = database.define("Resposta", {
     id:{
         typeof: Sequelize.INTEGER,
         allownull: false,
@@ -18,10 +19,19 @@ const Resposta = database.define("Resposta", {
         allownull: false, 
         foreignKey: true 
     },
+    datapostagem: {
+        type: Sequelize.INTEGER,
+        allownull: true
+
+    },
+    conteudo: {
+        type: Sequelize.TEXT,
+        allownull: true
+    },
     
         timestamps: false,
         tableName:"respostas"
     
     }) 
 
-    module.exports = Resposta
+    module.exports = Respostas

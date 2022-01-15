@@ -15,8 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('method'))
 
-//Configuração
-  //configurando os Controllers
+
 
 //configurando as rotas
    // Aqui que fica às famosas rotas, logo iremos testar elas com os metódos dos controllers
@@ -29,7 +28,7 @@ const postagensRouter = require("./routes/postagensRouter");
 const sobreNosRouter = require("./routes/sobreNosRouter");
 
 
-// chamada das rotas
+// Chamada das rotas
    // Aqui é a declaração da nossa url, para que possamos apenas utilizar o método do nosso controller e comprimento com o id e params.
 app.use("/cadastro", cadastroRouter);
 app.use("/perfil", perfilRouter);
