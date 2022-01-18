@@ -8,10 +8,7 @@
     // Módulo Session
    // Esse é o session, utilizado para fazer e iniciar uma sessão ao nosso usuário.
             app.use(session({
-                secret: 'Apenas um segredo!',
-                resave: false,
-                saveUninitialized: true,
-                cookie: { secure: true }
+                secret: 'Apenas um segredo!'
             }));
 
       //Módulo body-parser

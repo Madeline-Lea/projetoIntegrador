@@ -3,6 +3,16 @@
 
     const { Respostas } = require("../models/respostas");
 
+
+//Função pro front
+        var respostaaEJS = [{
+
+            nomeDeUsuario = req.body.nomeDeUsuario,
+            data_postagem = req.body.data,
+            conteudo = req.body.conteudo,
+            solucao = req.body.solucao
+
+        }];
 //Controller
     //Controller de respostas      
     const respostasController = {
@@ -25,7 +35,7 @@
        
                 const { id, usuario_id, pergunta_id, datapostagem, conteudo } = req.body;
                 
-                const respostas = await  Perguntas.update({id, usuario_id, pergunta_id, datapostagem, conteudo});
+                const respostas = await  Respostas.update({id, usuario_id, pergunta_id, datapostagem, conteudo});
     
                 if(respostas == null){
     
