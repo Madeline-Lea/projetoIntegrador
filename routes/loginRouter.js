@@ -6,5 +6,4 @@ loginRouter.get("/", loginController.index);
 loginRouter.post("/", loginController.login);
 
 
-
 module.exports = loginRouter
